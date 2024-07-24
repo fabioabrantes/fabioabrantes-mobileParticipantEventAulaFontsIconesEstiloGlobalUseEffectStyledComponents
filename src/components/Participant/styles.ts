@@ -1,51 +1,55 @@
-import { StyleSheet } from "react-native";
-import { THEMES } from '../../global/thmesGlobal';
+import styled from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderRadius: 5,
-    marginBottom: 10,
-    width: '100%',
-  },
-  nameParticipant: {
-    fontSize: THEMES.size.xm,
-    color: THEMES.colors.gray300,
-    fontFamily: THEMES.fonts.bold,
-    marginLeft: 16,
-    textAlign: 'center'
-  },
-  ModalContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 24,
-    backgroundColor: "rgba(20, 20, 20, 0.8)"
-  },
-  ModalWrapper: {
-    backgroundColor: THEMES.colors.white,
-    padding: 24,
-    borderRadius: 8,
-    alignItems: "center"
-  },
-  ModalTitle: {
-    textAlign: "center",
-    color: THEMES.colors.gray900,
-    fontSize: THEMES.size.sm,
-    fontFamily: THEMES.fonts.bold,
-  },
-  ModalSubTitle: {
-    textAlign: "center",
-    color: THEMES.colors.gray600,
-    fontSize: THEMES.size.xm,
-    fontFamily: THEMES.fonts.regular,
-  },
-  ModalButtonInteraction: {
-    flexDirection: "row",
-    gap: 8,
-    marginTop: 20,
-    width: "100%"
-  }
-})
+export const Container = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+`;
+
+export const NameParticipant = styled.Text`
+    font-size: ${props=>props.theme.size.xm};
+    color: ${props=>props.theme.colors.gray300};
+    font-family: ${props=>props.theme.fonts.bold};
+    margin-left: 16px;
+    text-align:center;
+`;
+
+export const ModalContainer = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgba(20, 20, 20, 0.8);
+`;
+
+export const ModalWrapper = styled.View`
+    background-color: ${props=>props.theme.colors.white};
+    padding: 24px;
+    border-radius: 8px;
+    align-items: center;
+`;
+
+export const ModalTitle = styled.Text`
+    font-size: ${props=>props.theme.size.sm};
+    color: ${props=>props.theme.colors.gray900};
+    font-family: ${props=>props.theme.fonts.bold};
+    text-align: center;
+`;
+
+export const ModalSubTitle = styled.Text`
+    font-size: ${props=>props.theme.size.xm};
+    color: ${props=>props.theme.colors.gray600};
+    font-family: ${props=>props.theme.fonts.regular};
+    text-align: center;
+`;
+
+export const ModalButtonInteraction = styled.View`
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 20px;
+    width: 100%;
+`;

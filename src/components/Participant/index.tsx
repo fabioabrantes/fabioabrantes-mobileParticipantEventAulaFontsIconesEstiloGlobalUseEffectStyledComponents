@@ -2,7 +2,16 @@ import { useState } from "react";
 import { Modal, Text, View } from "react-native";
 import { Botao } from "../Botao";
 
-import { styles } from "./styles";
+import {
+  Container,
+  ModalButtonInteraction,
+  ModalContainer,
+  ModalSubTitle,
+  ModalTitle,
+  ModalWrapper,
+  NameParticipant
+} from "./styles";
+
 import { ButtonModal } from "./components/ButtonModal";
 
 type PropsParticipant = {
@@ -16,9 +25,10 @@ export function Participant({ name, metodo }: PropsParticipant) {
     setModalVisibility(false);
     metodo(name);
   }
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.nameParticipant}>{name}</Text>
+    <Container>
+      <NameParticipant>{name}</NameParticipant>
 
       <Botao cor="red" iconName="trash-o" metodo={() => setModalVisibility(true)} />
 
@@ -28,13 +38,14 @@ export function Participant({ name, metodo }: PropsParticipant) {
         statusBarTranslucent
         animationType="slide"
       >
-        <View style={styles.ModalContainer}>
-          <View style={styles.ModalWrapper}>
+        <ModalContainer>
+          <ModalWrapper>
 
-            <Text style={styles.ModalTitle}>Remover</Text>
-            <Text style={styles.ModalSubTitle}>Deseja excluir {name}?</Text>
+            <ModalTitle>Remover</ModalTitle>
 
-            <View style={styles.ModalButtonInteraction}>
+            <ModalSubTitle>Deseja excluir {name}?</ModalSubTitle>
+
+            <ModalButtonInteraction>
               <ButtonModal
                 title="Não"
                 metodo={() => setModalVisibility(false)}
@@ -44,11 +55,11 @@ export function Participant({ name, metodo }: PropsParticipant) {
                 title="Sim"
                 metodo={remover}
               />
-            </View>
-          </View>
-        </View>
+            </ModalButtonInteraction>
+          </ModalWrapper>
+        </ModalContainer>
 
       </Modal>
-    </View>
+    </Container>
   )
 }
