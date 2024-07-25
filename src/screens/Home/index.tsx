@@ -20,10 +20,12 @@ export function Home() {
 
   function handleParticipant(nome: string) {
     setNameParticipant(nome);
+    console.log(nameParticipant)
   }
+  
   function addParticipant() {
     if (participants.includes(nameParticipant) || nameParticipant === '') {
-      Alert.alert('Error', 'Participate ja existe ou não foi digitado');
+      Alert.alert('Error', 'Participante ja existe ou não foi digitado');
     } else {
       setParticipants([...participants, nameParticipant]);
     }

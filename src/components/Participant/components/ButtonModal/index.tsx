@@ -1,18 +1,20 @@
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
 
-import { styles } from "./styles";
+import { Botao,TitleBotao } from "./styles";
 
-type PropsBotao = {
-  title:string;
+type PropsBotao = TouchableOpacityProps & {
+  title: string;
   metodo: () => void;
 }
-export function ButtonModal({ title, metodo }: PropsBotao) {
+export function ButtonModal({ title, metodo,...rest }: PropsBotao) {
   return (
-    <TouchableOpacity
+
+    <Botao
       onPress={metodo}
-      style={styles.botao}
+      {...rest}
     >
-      <Text style={styles.titleBotao}>{title}</Text>
-    </TouchableOpacity>
+      <TitleBotao>{title}</TitleBotao>
+    </Botao>
+
   )
 }

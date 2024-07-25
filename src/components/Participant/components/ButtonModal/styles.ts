@@ -1,19 +1,18 @@
-import { StyleSheet } from "react-native";
-import { THEMES } from "../../../../global/thmesGlobal";
+import styled from 'styled-components/native';
+import { TouchableOpacity } from 'react-native';
 
-export const styles = StyleSheet.create({
-  botao: {
-    height: 44,
-    borderRadius: 4,
-    alignItems: "center",
-    justifyContent: "center",
-    borderColor: THEMES.colors.gray700,
-    borderWidth: 1,
-    paddingHorizontal: 38
-  },
-  titleBotao: {
-    color: THEMES.colors.blue400,
-    fontSize: THEMES.size.sm,
-    fontFamily:THEMES.fonts.regular
-  }
-})
+export const Botao = styled(TouchableOpacity)`
+    height: 44px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    border-color: ${props=>props.theme.colors.gray700};
+    border-width: 1px;
+    padding:0 38px;
+`;
+
+export const TitleBotao = styled.Text`
+    color: ${props=>props.theme.colors.blue400};
+    font-size: ${props=>props.theme.size.sm};
+    font-family: ${props=>props.theme.fonts.regular};
+`;

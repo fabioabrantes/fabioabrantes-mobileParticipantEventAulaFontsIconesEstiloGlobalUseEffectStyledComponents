@@ -49,6 +49,7 @@ export function Participant({ name, metodo }: PropsParticipant) {
               <ButtonModal
                 title="Não"
                 metodo={() => setModalVisibility(false)}
+
               />
 
               <ButtonModal

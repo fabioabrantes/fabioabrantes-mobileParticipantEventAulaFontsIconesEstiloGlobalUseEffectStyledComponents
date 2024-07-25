@@ -19,11 +19,11 @@ export const THEMES = {
     bold:'Roboto_700Bold',
   },
   size:{
-    xxm:14,
-    xm:16,
-    sm: 20,
-    lg: 24,
-    xl: 34,
+    xxm:"14px",
+    xm:"16px",
+    sm: "20px",
+    lg:"24px",
+    xl: "34px",
   },
 
 } as const
